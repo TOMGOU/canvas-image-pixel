@@ -137,7 +137,7 @@ export const blurBackup = (imgData, num = 10) => {
  * @param { number } num 门帘间隔距离
  * @returns { ImageData } 处理后的图像对象
  */
-export const curtain = (imgData, num) => {
+export const curtain = (imgData, num = 10) => {
   const data = imgData.data.map((item, index) => {
     const intFloor = Math.floor(index / 4)
     // if (intFloor % num >= 0 && intFloor % num <= 10) return 0
