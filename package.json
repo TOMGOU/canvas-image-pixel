@@ -1,6 +1,6 @@
 {
   "name": "canvas-image-pixel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "all methods for canvas image pixel operation",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,14 @@
     "image",
     "pixel"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TOMGOU/canvas-image-pixel.git"
+  },
   "author": "tomgou",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TOMGOU/canvas-image-pixel/issues"
+  },
+  "homepage": "https://github.com/TOMGOU/canvas-image-pixel#readme"
 }
