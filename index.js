@@ -144,7 +144,7 @@ export const curtain = (imgData, num = 10) => {
     if (intFloor % num === 0) return 0
     return item
   })
-  return new ImageData(data, 960, 442);
+  return new ImageData(data, imgData.width, imgData.height);
 }
 
 /**
