@@ -5,7 +5,15 @@
 export const compose = (...fns) => {
   return fns.reverse().reduce((fn1, fn2) => {
     return (...args) => {
-      return fn2(fn1(...args))
+      if (typeof fn1(...args) === 'function' && typeof fn2(...args) === 'function') {
+        return fn2()(fn1()(...args))
+      } else if (typeof fn1(...args) === 'function' && typeof fn2(...args) !== 'function') {
+        return fn2(fn1()(...args))
+      } else if (typeof fn1(...args) !== 'function' && typeof fn2(...args) === 'function') {
+        return fn2()(fn1(...args))
+      } else {
+        return fn2(fn1(...args))
+      }
     }
   })
 }
@@ -116,7 +124,7 @@ export const blur = (imgData) => {
  * @param { ImageData } imgData 图像对象
  * @returns { ImageData } 处理后的图像对象
  */
-export const blurBackup = (imgData, num = 10) => {
+export const blurBackup = (num = 10) => imgData => {
   const fun = imgdata => {
     return imgdata.map((item, index, arr) => {
       if (index % 4 !== 3 & index > 3) return (arr[index - 4] + item + arr[index + 4]) / 3
@@ -137,7 +145,7 @@ export const blurBackup = (imgData, num = 10) => {
  * @param { number } num 门帘间隔距离
  * @returns { ImageData } 处理后的图像对象
  */
-export const curtain = (imgData, num = 10) => {
+export const curtain = (num = 10) => imgData => {
   const data = imgData.data.map((item, index) => {
     const intFloor = Math.floor(index / 4)
     // if (intFloor % num >= 0 && intFloor % num <= 10) return 0
@@ -168,7 +176,7 @@ export const gray = (imgData) => {
  * @param { number } num 马赛克单元大小
  * @returns { ImageData } 处理后的图像对象
  */
-export const mosaic = (imgData, num = 10) => {
+export const mosaic = (num = 10) => imgData => {
   const data = imgData.data.map((item, index, arr) => {
     const rows = Math.floor(index / (num * 4 * imgData.width))
     const columns = Math.floor(index % (4 * imgData.width) / (4 * num))
