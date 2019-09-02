@@ -10,12 +10,14 @@ The easiest way to install custom-canvas-api is with [`npm`][npm].
 npm install canvas-image-pixel
 ```
 
+## example
+[demo]: https://tomgou.github.io/canvas-example/www/index.html#/about
 
 ## Components
 
 Currently, it only includes several methods: reflection, reverse, blur, curtain, gray and mosaic. And all these methods can be combined by compose function.
 
-### for example ### 
+### Usage ### 
 ```
 import { compose, reflectionLeftRight, reflectionUpDown, blueColor } from 'canvas-image-pixel';
 
