@@ -1,6 +1,6 @@
 {
   "name": "canvas-image-pixel",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "all methods for canvas image pixel operation",
   "main": "index.js",
   "scripts": {

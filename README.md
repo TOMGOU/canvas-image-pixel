@@ -11,6 +11,8 @@ npm install canvas-image-pixel
 ```
 
 ## example
+[`demo`][demo]
+
 [demo]: https://tomgou.github.io/canvas-example/www/index.html#/about
 
 ## Components
